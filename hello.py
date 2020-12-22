@@ -9,7 +9,9 @@
 print('Bienvenido a Arpanet')
 password1 = input('Ingrese su identificador unico de acceso 1: ')
 password2 = input('Ingrese su identificador unico de acceso 2: ')
-id = (17657456756 + 545752)
+
+id = (password1, ' ', password2)
+
 print('El codigo ha sido aceptado', id)
 print('---->Bienvenido a Arpanet<----')
 z = """
@@ -45,3 +47,13 @@ print("my_string.count(' '):", my_string.count('o'))
 welcome_message = 'Hello World, i am sebastian!'
 print(welcome_message)
 print(welcome_message.replace('Hello', 'Goodbye'))
+
+format_string = 'Hello {}!'
+print(format_string.format('phoebe'))
+
+import string
+template_sebastian = string.Template('$artist sang $song in $year')
+print(template_sebastian.substitute(artist="Freddy Mercury", song="The Great Pretender", year="1982"))
+
+exerecise1 = "enyse,Marie,Smith,21,London,UK"
+print(exerecise1.replace(',',' '))
