@@ -24,3 +24,11 @@ print(all_ok)
 all_ok = False
 print(all_ok)
 print(type(all_ok))
+
+print('<------------------------->')
+
+print(2.3 + 1.5) 
+print(1.5 / 2.3) 
+print(1.5 * 2.3) 
+print(2.3 - 1.5) 
+print(1.5 - 2.3)
