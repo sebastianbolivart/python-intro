@@ -20,7 +20,7 @@ else:
 	print('Thank you')"""
 
 print('-----------Exercice 1--------------')
-#pagina 72
+
 num1 = int(input('Insert a number please: '))
 
 if num1 == 0:
@@ -31,3 +31,13 @@ elif num1 < 0:
 	print('The inserted number is negative')
 else:
 	print('The inserted number is not a number')
+
+
+print('-----------Exercice 2--------------')
+
+num2 = int(input('Insert a number please: '))
+
+if ((num2 % 2) == 0):
+	print('El numero ', num2, ' es par')
+else:
+	print('El numero ', num2, ' no es par')	
