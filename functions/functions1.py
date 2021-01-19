@@ -9,4 +9,15 @@ def square(n):
 
 print (square(2))
 
-print(get_integer_input.__doc__)
+def greeter(name, message = 'live long and prosper'):
+	print('Welcome', name, '-', message)
+greeter('Eloise')
+greeter('Eloise', 'Hope you like Python')
+
+def greeter(name, title = 'Dr', prompt = 'Welcome', message = 'Live Long and Prosper'):
+	print(prompt, title, name, '-', message)
+greeter(message = 'We like Python', name = 'Lloyd')
+
+double = lambda i : i * i 
+
+print(double(10))
