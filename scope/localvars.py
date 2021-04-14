@@ -6,4 +6,13 @@ def print_max():
 	print(max)
 print_max()
 print(max)
-#pagina 136
+
+def outer():
+	title =  'original title'
+	def inner():
+		nonlocal title
+		title = 'another title'
+		print('inner:', title)
+	inner()
+	print('outer:', title)
+outer()
