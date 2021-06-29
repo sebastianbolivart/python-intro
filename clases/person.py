@@ -1,46 +1,62 @@
 class Person:
-	"""An example class to hold a persons name and age"""
-	def __init__(self, name, age):
-		self.name = name
-		self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-	def __str__(self):
-		return self.name + ' is ' + str(self.age)
+    def birthday(self):
+        print('Happy birthday you were', self.age)
+        self.age += 1
+        print('You are now', self.age)
 
-	def birthday(self):
-		print ('Happy birthday you were', self.age)
-		self.age += 1;
-		print('you are now', self.age)
+    def __str__(self):
+        return self.name + ' is ' + str(self.age)
 
-	def calculate_pay(self, hours_worked):
-		rate_of_pay = 7.50
-		if self.age >= 21:
-			rate_of_pay += 2.50
-		return hours_worked * rate_of_pay
 
-	def is_teenager(self):
-		return self.age < 20
+class Employee(Person):
+    def __init__(self, name, age, id):
+        super().__init__(name, age)
+        self.id = id
 
-p1 = Person('John', 36)
-p2 = Person('Phoebe', 21)
-p3 = Person('Adam', 19)
+    def calculate_pay(self, hours_worked):
+        rate_of_pay = 7.50
+        if self.age >= 21:
+            rate_of_pay += 2.50
+        return hours_worked * rate_of_pay
 
-pay = p2.calculate_pay(40)
-print('Pay', p2.name, pay)
+    def __str__(self):
+        return super().__str__() + ' - id(' + str(self.id) + ')'
 
-pay = p3.calculate_pay(40)
-print('Pay', p3.name, pay)
 
-del(pay)
+class SalesPerson(Employee):
+    def __init__(self, name, age, id, region, sales):
+        super().__init__(name, age, id)
+        self.region = region
+        self.sales = sales
 
-teen = p2.is_teenager()
-print(teen)
+    def bonus(self):
+        return self.sales * 0.5
 
-print('Class atributes')
-print(Person.__name__)
-print(Person.__module__)
-print(Person.__doc__)
-print(Person.__dict__)
-print('Object atributes')
-print(p1.__class__)
-print(p1.__dict__)
+
+print('Person')
+p = Person('John', 54)
+print(p)
+p.birthday()
+print(p.name)
+print(p.age)
+print('-' * 25)
+
+print('Employee')
+e = Employee('Denise', 51, 7468)
+print(e)
+e.birthday()
+print(e.name)
+print(e.age)
+print(e.id)
+print('e.calculate_pay(40):', e.calculate_pay(40))
+print('-' * 25)
+
+print('SalesPerson')
+s = SalesPerson('Phoebe', 21, 4712, 'UK', 30000.0)
+s.birthday()
+print('s.calculate_pay(40):', s.calculate_pay(40))
+print('s.bonus():', s.bonus())
